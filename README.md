@@ -1,16 +1,18 @@
-## Hi there 👋
+Hi, I'm Saltanat 👋
 
-<!--
-**saltuwwa/saltuwwa** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a first-year Computer Science student.
+I'm just starting my journey in programming and AI.
 
-Here are some ideas to get you started:
+This GitHub is my learning diary.
+Here I will upload my projects, notes, and experiments
+as I grow step by step.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Currently learning:
+- Java
+- Python
+- LLM Engineering
+- CS fundamentals
+
+Interested in:
+- AI / ML
+- LLMs 
