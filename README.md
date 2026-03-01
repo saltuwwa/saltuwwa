@@ -1,7 +1,7 @@
 Hi, I'm Saltanat 👋
 
 I'm a first-year Computer Science student.
-I'm just starting my journey in programming and AI.
+I'm just starting my journey in programming and AI & ML.
 
 This GitHub is my learning diary.
 Here I will upload my projects, notes, and experiments
