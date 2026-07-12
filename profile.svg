@@ -1,30 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="791" height="528" viewBox="0 0 791 528" font-family="'Cascadia Code',Consolas,'DejaVu Sans Mono',Menlo,monospace" font-size="13px" style="white-space:pre">
-<defs><linearGradient id="sunset" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1="68" y2="459"><stop offset="0" stop-color="#ffe38e"/><stop offset="0.45" stop-color="#ff9e64"/><stop offset="1" stop-color="#f778ba"/></linearGradient></defs>
 <rect width="791" height="528" rx="10" fill="#0d1117" stroke="#30363d"/>
-<g fill="url(#sunset)">
-<text xml:space="preserve" x="26" y="81">                x+**#%%##%</text>
-<text xml:space="preserve" x="26" y="98">               .;*==+*x%%%#@</text>
-<text xml:space="preserve" x="26" y="115">              ..........,x%%@</text>
-<text xml:space="preserve" x="26" y="132">             *.............#%</text>
-<text xml:space="preserve" x="26" y="149">             .x..,,.........*@</text>
-<text xml:space="preserve" x="26" y="166">             .%;............=%</text>
-<text xml:space="preserve" x="26" y="183">            ..##............%%%</text>
-<text xml:space="preserve" x="26" y="200">            ..*#*..........#%%#</text>
-<text xml:space="preserve" x="26" y="217">            ..+#%#:.......x%%%##</text>
-<text xml:space="preserve" x="26" y="234">          %+..+x###x.....;x####x#</text>
-<text xml:space="preserve" x="26" y="251">       %+++x*-*xxxxx*....-xx###x*%@@</text>
-<text xml:space="preserve" x="26" y="268">      ,:****x*+*xxx*x#;:**xxx##xx##xx#@</text>
-<text xml:space="preserve" x="26" y="285">     ..++*****++****x##%#xxxxx#*x######@</text>
-<text xml:space="preserve" x="26" y="302">     .===+****=++**xxx###xxxxxx*x######x@</text>
-<text xml:space="preserve" x="26" y="319">    .;====+***==****xxx##xxxxxx*x+*######</text>
-<text xml:space="preserve" x="26" y="336">    .====++++*++******x##xx**xx**..#####x@</text>
-<text xml:space="preserve" x="26" y="353">   #.=====+***+=+***x*x###**x***+=+######@</text>
-<text xml:space="preserve" x="26" y="370">   ..===++**x*+=+*+*xx###x#xx****x##%%##x</text>
-<text xml:space="preserve" x="26" y="387">  @,:+******x*=++++**x##%%%x*xxxx*x#%%###</text>
-<text xml:space="preserve" x="26" y="404">  .;+xxxx*xx*+++++*xx##%%%%###%#####%####</text>
-<text xml:space="preserve" x="26" y="421">  %=xxxxxx*******xx#%%%%%%%%%%%%#%%%##%%#</text>
-<text xml:space="preserve" x="26" y="438">   #xx####xxxx##%%%%%%%%%@@@@@%%%%%%%%%%%</text>
-<text xml:space="preserve" x="26" y="455">   #x#######%%@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+<g fill="#e6edf3">
+<text xml:space="preserve" x="26" y="39">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+<text xml:space="preserve" x="26" y="56">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+<text xml:space="preserve" x="26" y="73">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+<text xml:space="preserve" x="26" y="90">@@@@@@@@@@@@@@@@@@@@%#%%@@@@@@@@@@@@@@@@@@@@</text>
+<text xml:space="preserve" x="26" y="107">@@@@@@@@@@@@@@@@%=:.   .-*%@@@@@@@@@@@@@@#**</text>
+<text xml:space="preserve" x="26" y="124">@@@@@@@@@@@@@@@*. :::::   :*@@@@@@@@@@%#*+++</text>
+<text xml:space="preserve" x="26" y="141">@@@@@@@@@@@@@@%==******+=:  +@@@@@@%##***+++</text>
+<text xml:space="preserve" x="26" y="158">@@@@@@@@@@@@@@*+#****++++*=. %@@@@#####*+++=</text>
+<text xml:space="preserve" x="26" y="175">@@@@@@@@@@@@@%.++--+*+==+#%+.-@@%#####***+=-</text>
+<text xml:space="preserve" x="26" y="192">@@@@@@@@@@@@@# =#*+*##*#%%%*- *%%######**++=</text>
+<text xml:space="preserve" x="26" y="209">@@@@@@@@@@@@@# :##*******##+. -%%###***+++++</text>
+<text xml:space="preserve" x="26" y="226">@@@@@@@@@@@@@%. :+##*+*#%#*:   #%####*===+==</text>
+<text xml:space="preserve" x="26" y="243">@@@@@@@@@@@@%%:  :=*####*=.    -#%##*++**+=-</text>
+<text xml:space="preserve" x="26" y="260">@@@@@@@@@@%**#.     =**+=:      :#####*#*+++</text>
+<text xml:space="preserve" x="26" y="277">@@@%@@@%+:  .:.     :+**+:       :-+***#**++</text>
+<text xml:space="preserve" x="26" y="294">@@@**##-              -=:            .+###*+</text>
+<text xml:space="preserve" x="26" y="311">%%##*%-                                =##+=</text>
+<text xml:space="preserve" x="26" y="328">-**+*+                                  =+==</text>
+<text xml:space="preserve" x="26" y="345">=*#**.                           ::     .=++</text>
+<text xml:space="preserve" x="26" y="362">+***=                           .*#.     -++</text>
+<text xml:space="preserve" x="26" y="379">:--*-                           .--.     =+=</text>
+<text xml:space="preserve" x="26" y="396">:--+-                                    *##</text>
+<text xml:space="preserve" x="26" y="413">+++::                                    #@@</text>
+<text xml:space="preserve" x="26" y="430">##*-.                                    #@%</text>
+<text xml:space="preserve" x="26" y="447">%%+:.                                    %@@</text>
+<text xml:space="preserve" x="26" y="464">%%#:                                    .%@%</text>
+<text xml:space="preserve" x="26" y="481">###:                                    :%%#</text>
+<text xml:space="preserve" x="26" y="498">###.                                    =%%%</text>
 </g>
 <text xml:space="preserve" x="399.2" y="39" font-weight="bold"><tspan fill="#ffa657">saltuwwa</tspan><tspan fill="#8b949e">@</tspan><tspan fill="#7ee787">github</tspan></text>
 <text xml:space="preserve" x="399.2" y="56"><tspan fill="#30363d">----------------------------------</tspan></text>
