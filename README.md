@@ -1,8 +1,4 @@
 <div align="center">
-  <img src="profile.svg" alt="saltuwwa — terminal-style profile card" width="500" />
-</div>
-
-<div align="center">
 
 ### 🔗 Connect with me
 
