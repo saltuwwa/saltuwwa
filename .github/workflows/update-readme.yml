@@ -1,4 +1,4 @@
-name: Update README uptime
+name: Update profile card
 
 on:
   schedule:
@@ -18,12 +18,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Update README uptime
-        run: python update_readme.py
+      - name: Generate profile card
+        run: python generate_profile.py
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git diff --cached --quiet || (git commit -m "chore: update uptime" && git push)
+          git add profile.svg
+          git diff --cached --quiet || (git commit -m "chore: update profile uptime" && git push)
