@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="profile.svg" alt="saltuwwa — terminal-style profile card" />
+</div>
+
 [LinkedIn](https://www.linkedin.com/in/saltanat-tugayeva-057305387/) · [X / Twitter](https://x.com/tsaltanatt)
 
 # 📊 GitHub Stats:
