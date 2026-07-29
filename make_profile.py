@@ -1,8 +1,4 @@
-"""Generate profile.svg: minimal terminal-style info panel without ASCII art.
-
-Runs daily via .github/workflows/update-readme.yml — recomputes uptime
-and pulls live repo/star/follower counts from the GitHub API.
-"""
+"""Generate wide terminal-style profile SVG with two-column layout."""
 import html
 import json
 import os
@@ -11,8 +7,6 @@ from datetime import date
 
 USER = "saltuwwa"
 BORN = date(2007, 11, 28)
-
-# ---------------------------------------------------------------- data
 
 def uptime() -> str:
     today = date.today()
@@ -26,7 +20,6 @@ def uptime() -> str:
     days = (today - anchor).days
     return f"{years} years, {months} months, {days} days"
 
-
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": USER})
     token = os.environ.get("GITHUB_TOKEN")
@@ -35,116 +28,204 @@ def fetch(url):
     with urllib.request.urlopen(req) as r:
         return json.load(r)
 
-
 def gh_stats():
     u = fetch(f"https://api.github.com/users/{USER}")
     repos = fetch(f"https://api.github.com/users/{USER}/repos?per_page=100")
     stars = sum(r["stargazers_count"] for r in repos)
     return u["public_repos"], stars, u["followers"]
 
-# ---------------------------------------------------------------- svg
+# ================================================================ SVG
 
-# colors (GitHub-dark friendly, terminal aesthetic)
 C = {
     "bg":     "#0d1117",
     "border": "#30363d",
-    "label":  "#ffa657",   # warm orange
-    "dots":   "#3d444d",
-    "val":    "#e6edf3",
-    "sect":   "#d2a8ff",   # soft purple
-    "num":    "#79c0ff",   # blue
-    "user":   "#ffa657",
-    "at":     "#8b949e",
+    "label":  "#ffa657",   # orange
+    "prompt": "#ffa657",   # orange for user
+    "at":     "#8b949e",   # gray @
     "host":   "#7ee787",   # green
-    "rule":   "#30363d",
+    "dots":   "#3d444d",   # dark dots
+    "val":    "#e6edf3",   # light gray values
+    "num":    "#79c0ff",   # blue for numbers
+    "sect":   "#d2a8ff",   # purple for section titles
 }
 
-FONT = 13            # px, monospace
-CH = FONT * 0.6      # approx char advance
-LH = 17              # line height
-PAD = 20
+# Font sizes (px)
+FONT_PROMPT = 18      # prompt line
+FONT_SECTION = 16     # "System", "Profile"
+FONT_TEXT = 17        # main content
+FONT_LABEL = 16       # field names
+
+# Spacing
+LINE_HEIGHT = 24
+PAD = 40
+COL_WIDTH = 420
+COL_GAP = 60
+TOTAL_WIDTH = PAD + COL_WIDTH + COL_GAP + COL_WIDTH + PAD
+
+# SVG dimensions
+SVG_WIDTH = TOTAL_WIDTH
+SVG_HEIGHT = 480
 
 
-def line(label, dots, value, vcolor="val"):
-    return [(label, "label"), (dots, "dots"), (value, vcolor)]
-
-
-def build_info(up, n_repos, n_stars, n_followers):
-    return [
-        [(USER, "user"), ("@", "at"), ("github", "host")],
-        [("-" * 46, "rule")],
-        line("OS ", "..................... ", "Windows 11"),
-        line("Host ", "................ ", "SDU, Kazakhstan"),
-        line("Uptime ", ".............. ", up, "num"),
-        line("Kernel ", ".............. ", "CS student, 1st year"),
-        line("Shell ", "............... ", "PowerShell, Git Bash"),
-        line("IDE ", ".................. ", "VS Code, Claude Code"),
-        [],
-        line("Languages.Programming ", " ", "Python, Java,"),
-        [(" " * 25, "val"), ("TypeScript, JS", "val")],
-        line("Languages.Computer ", " ... ", "SQL, HTML/CSS,"),
-        [(" " * 25, "val"), ("LaTeX, JSON", "val")],
-        line("Languages.Real ", " ......... ", "Kazakh, Russian,"),
-        [(" " * 25, "val"), ("English", "val")],
-        [],
-        line("Focus.AI ", " ........... ", "LLM agents, RAG,"),
-        [(" " * 15, "val"), ("fine-tuning, NLP", "val")],
-        line("Hobbies ", " ............ ", "badminton, hiking,"),
-        [(" " * 15, "val"), ("3Blue1Brown marathons", "val")],
-        [],
-        [("GitHub Stats:", "sect")],
-        line("  Repos ", " ", (str(n_repos)).ljust(3), "num"),
-        [("  |  ", "dots"), ("Stars ", "label"), (" ", "val"), (str(n_stars).ljust(3), "num"),
-         ("  |  ", "dots"), ("Followers ", "label"), (" ", "val"), (str(n_followers).ljust(3), "num")],
-    ]
-
-
-def make_svg(info):
-    rows = len(info)
-    width = int(PAD + 52 * CH + PAD)
-    height = int(rows * LH + PAD * 2)
-    y0 = PAD + FONT
-
+def make_svg(up, n_repos, n_stars, n_followers):
+    """Build wide terminal-style SVG with two columns."""
     out = []
+    
+    # SVG header
     out.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" font-family="\'Cascadia Code\',\'Courier New\','
-        f'\'DejaVu Sans Mono\',Menlo,monospace" font-size="{FONT}px" '
-        f'style="white-space:pre">'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{SVG_WIDTH}" height="{SVG_HEIGHT}" '
+        f'viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" '
+        f'font-family="\'JetBrains Mono\',\'Fira Code\',\'Cascadia Code\',Menlo,monospace" '
+        f'style="white-space:pre; overflow: visible;">'
+    )
+    
+    # Background
+    out.append(
+        f'<rect width="{SVG_WIDTH}" height="{SVG_HEIGHT}" rx="12" '
+        f'fill="{C["bg"]}" stroke="{C["border"]}" stroke-width="2"/>'
+    )
+    
+    # Subtle top glow effect (optional)
+    out.append(
+        f'<defs><linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">'
+        f'<stop offset="0%" style="stop-color:{C["border"]};stop-opacity:0.3"/>'
+        f'<stop offset="100%" style="stop-color:{C["bg"]};stop-opacity:0"/>'
+        f'</linearGradient></defs>'
     )
     out.append(
-        f'<rect width="{width}" height="{height}" rx="8" '
-        f'fill="{C["bg"]}" stroke="{C["border"]}" stroke-width="1"/>'
+        f'<rect width="{SVG_WIDTH}" height="80" rx="12" fill="url(#glow)"/>'
     )
-
-    # info panel only, no ASCII art
-    for i, segs in enumerate(info):
-        if not segs:
-            continue
-        spans = "".join(
-            f'<tspan fill="{C[cls]}">{html.escape(txt)}</tspan>' for txt, cls in segs
-        )
-        bold = ' font-weight="bold"' if i == 0 else ""
+    
+    y = PAD
+    
+    # ============ Prompt line
+    prompt_text = f"{USER}@github:~$ "
+    out.append(
+        f'<text x="{PAD}" y="{y}" font-size="{FONT_PROMPT}" font-weight="bold" '
+        f'font-family="\'JetBrains Mono\',monospace">'
+        f'<tspan fill="{C["prompt"]}">{html.escape(USER)}</tspan>'
+        f'<tspan fill="{C["at"]}">@</tspan>'
+        f'<tspan fill="{C["host"]}">github</tspan>'
+        f'<tspan fill="{C["val"]}">::~$</tspan>'
+        f'</text>'
+    )
+    
+    y += LINE_HEIGHT + 10
+    
+    # Separator line
+    out.append(
+        f'<line x1="{PAD}" y1="{y}" x2="{SVG_WIDTH - PAD}" y2="{y}" '
+        f'stroke="{C["border"]}" stroke-width="1" opacity="0.5"/>'
+    )
+    
+    y += LINE_HEIGHT - 5
+    
+    # ============ LEFT COLUMN: System
+    x_left = PAD
+    
+    # Section title
+    out.append(
+        f'<text x="{x_left}" y="{y}" font-size="{FONT_SECTION}" '
+        f'fill="{C["sect"]}" font-weight="bold">System</text>'
+    )
+    y += LINE_HEIGHT + 5
+    
+    # System fields
+    system_lines = [
+        ("OS", "Windows 11"),
+        ("Host", "SDU, Kazakhstan"),
+        ("Uptime", up),
+        ("Kernel", "CS student"),
+        ("Shell", "PowerShell, Git Bash"),
+        ("IDE", "VS Code, Claude Code"),
+    ]
+    
+    for label, value in system_lines:
+        # Label
         out.append(
-            f'<text xml:space="preserve" x="{PAD}" y="{y0 + i * LH}"{bold}>'
-            f"{spans}</text>"
+            f'<text x="{x_left}" y="{y}" font-size="{FONT_TEXT}" '
+            f'fill="{C["label"]}" font-family="monospace">{html.escape(label)}</text>'
         )
-
-    out.append("</svg>")
-    return "\n".join(out)
+        
+        # Dots
+        label_width = len(label) * 10
+        dots_x = x_left + label_width + 8
+        out.append(
+            f'<text x="{dots_x}" y="{y}" font-size="{FONT_TEXT}" '
+            f'fill="{C["dots"]}" font-family="monospace">........</text>'
+        )
+        
+        # Value
+        val_x = dots_x + 70
+        val_color = C["num"] if label == "Uptime" else C["val"]
+        out.append(
+            f'<text x="{val_x}" y="{y}" font-size="{FONT_TEXT}" '
+            f'fill="{val_color}" font-family="monospace">{html.escape(value)}</text>'
+        )
+        
+        y += LINE_HEIGHT
+    
+    # ============ RIGHT COLUMN: Profile
+    x_right = x_left + COL_WIDTH + COL_GAP
+    y_right = PAD + 35  # Align with System title
+    
+    # Section title
+    out.append(
+        f'<text x="{x_right}" y="{y_right}" font-size="{FONT_SECTION}" '
+        f'fill="{C["sect"]}" font-weight="bold">Profile</text>'
+    )
+    y_right += LINE_HEIGHT + 5
+    
+    # Profile fields
+    profile_lines = [
+        ("Programming", "Python, Java, TypeScript"),
+        ("Computer", "SQL, HTML/CSS, LaTeX, JSON"),
+        ("Languages", "Kazakh, Russian, English"),
+        ("Focus", "LLM agents, RAG, fine-tuning"),
+        ("Hobbies", "badminton, hiking, 3Blue1Brown"),
+    ]
+    
+    for label, value in profile_lines:
+        # Label
+        out.append(
+            f'<text x="{x_right}" y="{y_right}" font-size="{FONT_TEXT}" '
+            f'fill="{C["label"]}" font-family="monospace">{html.escape(label)}</text>'
+        )
+        
+        # Dots
+        label_width = len(label) * 10
+        dots_x = x_right + label_width + 8
+        out.append(
+            f'<text x="{dots_x}" y="{y_right}" font-size="{FONT_TEXT}" '
+            f'fill="{C["dots"]}" font-family="monospace">........</text>'
+        )
+        
+        # Value
+        val_x = dots_x + 70
+        out.append(
+            f'<text x="{val_x}" y="{y_right}" font-size="{FONT_TEXT}" '
+            f'fill="{C["val"]}" font-family="monospace">{html.escape(value)}</text>'
+        )
+        
+        y_right += LINE_HEIGHT
+    
+    out.append('</svg>')
+    return '\n'.join(out)
 
 
 def main():
     try:
         n_repos, n_stars, n_followers = gh_stats()
-    except Exception:
-        n_repos, n_stars, n_followers = 25, 4, 6  # fallback if API is down
-    svg = make_svg(build_info(uptime(), n_repos, n_stars, n_followers))
+    except Exception as e:
+        print(f"API error: {e}")
+        n_repos, n_stars, n_followers = 25, 4, 6
+    
+    svg = make_svg(uptime(), n_repos, n_stars, n_followers)
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "profile.svg")
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(svg)
-    print("profile.svg updated | uptime:", uptime(),
-          "| stats:", n_repos, n_stars, n_followers)
+    
+    print(f"✓ profile.svg ({SVG_WIDTH}×{SVG_HEIGHT}) | uptime: {uptime()} | stats: {n_repos} repos, {n_stars} stars")
 
 
 if __name__ == "__main__":
