@@ -1,57 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="791" height="528" viewBox="0 0 791 528" font-family="'Cascadia Code',Consolas,'DejaVu Sans Mono',Menlo,monospace" font-size="13px" style="white-space:pre">
-<rect width="791" height="528" rx="10" fill="#0d1117" stroke="#30363d"/>
-<g fill="#e6edf3">
-<text xml:space="preserve" x="26" y="39">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
-<text xml:space="preserve" x="26" y="56">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
-<text xml:space="preserve" x="26" y="73">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
-<text xml:space="preserve" x="26" y="90">@@@@@@@@@@@@@@@@@@@@%#%%@@@@@@@@@@@@@@@@@@@@</text>
-<text xml:space="preserve" x="26" y="107">@@@@@@@@@@@@@@@@%=:.   .-*%@@@@@@@@@@@@@@#**</text>
-<text xml:space="preserve" x="26" y="124">@@@@@@@@@@@@@@@*. :::::   :*@@@@@@@@@@%#*+++</text>
-<text xml:space="preserve" x="26" y="141">@@@@@@@@@@@@@@%==******+=:  +@@@@@@%##***+++</text>
-<text xml:space="preserve" x="26" y="158">@@@@@@@@@@@@@@*+#****++++*=. %@@@@#####*+++=</text>
-<text xml:space="preserve" x="26" y="175">@@@@@@@@@@@@@%.++--+*+==+#%+.-@@%#####***+=-</text>
-<text xml:space="preserve" x="26" y="192">@@@@@@@@@@@@@# =#*+*##*#%%%*- *%%######**++=</text>
-<text xml:space="preserve" x="26" y="209">@@@@@@@@@@@@@# :##*******##+. -%%###***+++++</text>
-<text xml:space="preserve" x="26" y="226">@@@@@@@@@@@@@%. :+##*+*#%#*:   #%####*===+==</text>
-<text xml:space="preserve" x="26" y="243">@@@@@@@@@@@@%%:  :=*####*=.    -#%##*++**+=-</text>
-<text xml:space="preserve" x="26" y="260">@@@@@@@@@@%**#.     =**+=:      :#####*#*+++</text>
-<text xml:space="preserve" x="26" y="277">@@@%@@@%+:  .:.     :+**+:       :-+***#**++</text>
-<text xml:space="preserve" x="26" y="294">@@@**##-              -=:            .+###*+</text>
-<text xml:space="preserve" x="26" y="311">%%##*%-                                =##+=</text>
-<text xml:space="preserve" x="26" y="328">-**+*+                                  =+==</text>
-<text xml:space="preserve" x="26" y="345">=*#**.                           ::     .=++</text>
-<text xml:space="preserve" x="26" y="362">+***=                           .*#.     -++</text>
-<text xml:space="preserve" x="26" y="379">:--*-                           .--.     =+=</text>
-<text xml:space="preserve" x="26" y="396">:--+-                                    *##</text>
-<text xml:space="preserve" x="26" y="413">+++::                                    #@@</text>
-<text xml:space="preserve" x="26" y="430">##*-.                                    #@%</text>
-<text xml:space="preserve" x="26" y="447">%%+:.                                    %@@</text>
-<text xml:space="preserve" x="26" y="464">%%#:                                    .%@%</text>
-<text xml:space="preserve" x="26" y="481">###:                                    :%%#</text>
-<text xml:space="preserve" x="26" y="498">###.                                    =%%%</text>
-</g>
-<text xml:space="preserve" x="399.2" y="39" font-weight="bold"><tspan fill="#ffa657">saltuwwa</tspan><tspan fill="#8b949e">@</tspan><tspan fill="#7ee787">github</tspan></text>
-<text xml:space="preserve" x="399.2" y="56"><tspan fill="#30363d">----------------------------------</tspan></text>
-<text xml:space="preserve" x="399.2" y="73"><tspan fill="#ffa657">OS </tspan><tspan fill="#3d444d">........... </tspan><tspan fill="#e6edf3">Windows 11</tspan></text>
-<text xml:space="preserve" x="399.2" y="90"><tspan fill="#ffa657">Host </tspan><tspan fill="#3d444d">......... </tspan><tspan fill="#e6edf3">SDU, Kazakhstan</tspan></text>
-<text xml:space="preserve" x="399.2" y="107"><tspan fill="#ffa657">Uptime </tspan><tspan fill="#3d444d">....... </tspan><tspan fill="#79c0ff">18 years, 8 months, 1 days</tspan></text>
-<text xml:space="preserve" x="399.2" y="124"><tspan fill="#ffa657">Kernel </tspan><tspan fill="#3d444d">....... </tspan><tspan fill="#e6edf3">CS student, 1st year</tspan></text>
-<text xml:space="preserve" x="399.2" y="141"><tspan fill="#ffa657">Shell </tspan><tspan fill="#3d444d">........ </tspan><tspan fill="#e6edf3">PowerShell, Git Bash</tspan></text>
-<text xml:space="preserve" x="399.2" y="158"><tspan fill="#ffa657">IDE </tspan><tspan fill="#3d444d">.......... </tspan><tspan fill="#e6edf3">VS Code, Claude Code</tspan></text>
-<text xml:space="preserve" x="399.2" y="192"><tspan fill="#ffa657">Languages.Programming </tspan><tspan fill="#3d444d">.. </tspan><tspan fill="#e6edf3">Python, Java,</tspan></text>
-<text xml:space="preserve" x="399.2" y="209"><tspan fill="#e6edf3">                         </tspan><tspan fill="#e6edf3">TypeScript, JS</tspan></text>
-<text xml:space="preserve" x="399.2" y="226"><tspan fill="#ffa657">Languages.Computer </tspan><tspan fill="#3d444d">..... </tspan><tspan fill="#e6edf3">SQL, HTML/CSS,</tspan></text>
-<text xml:space="preserve" x="399.2" y="243"><tspan fill="#e6edf3">                         </tspan><tspan fill="#e6edf3">LaTeX, JSON</tspan></text>
-<text xml:space="preserve" x="399.2" y="260"><tspan fill="#ffa657">Languages.Real </tspan><tspan fill="#3d444d">......... </tspan><tspan fill="#e6edf3">Kazakh, Russian,</tspan></text>
-<text xml:space="preserve" x="399.2" y="277"><tspan fill="#e6edf3">                         </tspan><tspan fill="#e6edf3">English</tspan></text>
-<text xml:space="preserve" x="399.2" y="311"><tspan fill="#ffa657">Focus.AI </tspan><tspan fill="#3d444d">..... </tspan><tspan fill="#e6edf3">LLM agents, RAG,</tspan></text>
-<text xml:space="preserve" x="399.2" y="328"><tspan fill="#e6edf3">               </tspan><tspan fill="#e6edf3">fine-tuning, NLP</tspan></text>
-<text xml:space="preserve" x="399.2" y="345"><tspan fill="#ffa657">Hobbies </tspan><tspan fill="#3d444d">...... </tspan><tspan fill="#e6edf3">badminton, hiking,</tspan></text>
-<text xml:space="preserve" x="399.2" y="362"><tspan fill="#e6edf3">               </tspan><tspan fill="#e6edf3">3Blue1Brown marathons</tspan></text>
-<text xml:space="preserve" x="399.2" y="396"><tspan fill="#d2a8ff">Contact:</tspan></text>
-<text xml:space="preserve" x="399.2" y="413"><tspan fill="#ffa657">  LinkedIn </tspan><tspan fill="#3d444d">... </tspan><tspan fill="#e6edf3">in/saltanat-tugayeva-057305387</tspan></text>
-<text xml:space="preserve" x="399.2" y="430"><tspan fill="#ffa657">  X </tspan><tspan fill="#3d444d">.......... </tspan><tspan fill="#e6edf3">x.com/tsaltanatt</tspan></text>
-<text xml:space="preserve" x="399.2" y="447"><tspan fill="#ffa657">  GitHub </tspan><tspan fill="#3d444d">..... </tspan><tspan fill="#e6edf3">saltuwwa</tspan></text>
-<text xml:space="preserve" x="399.2" y="481"><tspan fill="#d2a8ff">GitHub Stats:</tspan></text>
-<text xml:space="preserve" x="399.2" y="498"><tspan fill="#ffa657">  Repos </tspan><tspan fill="#79c0ff">27</tspan><tspan fill="#ffa657">  |  Stars </tspan><tspan fill="#79c0ff">5</tspan><tspan fill="#ffa657">  |  Followers </tspan><tspan fill="#79c0ff">9</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="445" height="448" viewBox="0 0 445 448" font-family="'Cascadia Code','Courier New','DejaVu Sans Mono',Menlo,monospace" font-size="13px" style="white-space:pre">
+<rect width="445" height="448" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text xml:space="preserve" x="20" y="33" font-weight="bold"><tspan fill="#ffa657">saltuwwa</tspan><tspan fill="#8b949e">@</tspan><tspan fill="#7ee787">github</tspan></text>
+<text xml:space="preserve" x="20" y="50"><tspan fill="#30363d">----------------------------------------------</tspan></text>
+<text xml:space="preserve" x="20" y="67"><tspan fill="#ffa657">OS </tspan><tspan fill="#3d444d">..................... </tspan><tspan fill="#e6edf3">Windows 11</tspan></text>
+<text xml:space="preserve" x="20" y="84"><tspan fill="#ffa657">Host </tspan><tspan fill="#3d444d">................ </tspan><tspan fill="#e6edf3">SDU, Kazakhstan</tspan></text>
+<text xml:space="preserve" x="20" y="101"><tspan fill="#ffa657">Uptime </tspan><tspan fill="#3d444d">.............. </tspan><tspan fill="#79c0ff">18 years, 8 months, 1 days</tspan></text>
+<text xml:space="preserve" x="20" y="118"><tspan fill="#ffa657">Kernel </tspan><tspan fill="#3d444d">.............. </tspan><tspan fill="#e6edf3">CS student, 1st year</tspan></text>
+<text xml:space="preserve" x="20" y="135"><tspan fill="#ffa657">Shell </tspan><tspan fill="#3d444d">............... </tspan><tspan fill="#e6edf3">PowerShell, Git Bash</tspan></text>
+<text xml:space="preserve" x="20" y="152"><tspan fill="#ffa657">IDE </tspan><tspan fill="#3d444d">.................. </tspan><tspan fill="#e6edf3">VS Code, Claude Code</tspan></text>
+<text xml:space="preserve" x="20" y="186"><tspan fill="#ffa657">Languages.Programming </tspan><tspan fill="#3d444d"> </tspan><tspan fill="#e6edf3">Python, Java,</tspan></text>
+<text xml:space="preserve" x="20" y="203"><tspan fill="#e6edf3">                         </tspan><tspan fill="#e6edf3">TypeScript, JS</tspan></text>
+<text xml:space="preserve" x="20" y="220"><tspan fill="#ffa657">Languages.Computer </tspan><tspan fill="#3d444d"> ... </tspan><tspan fill="#e6edf3">SQL, HTML/CSS,</tspan></text>
+<text xml:space="preserve" x="20" y="237"><tspan fill="#e6edf3">                         </tspan><tspan fill="#e6edf3">LaTeX, JSON</tspan></text>
+<text xml:space="preserve" x="20" y="254"><tspan fill="#ffa657">Languages.Real </tspan><tspan fill="#3d444d"> ......... </tspan><tspan fill="#e6edf3">Kazakh, Russian,</tspan></text>
+<text xml:space="preserve" x="20" y="271"><tspan fill="#e6edf3">                         </tspan><tspan fill="#e6edf3">English</tspan></text>
+<text xml:space="preserve" x="20" y="305"><tspan fill="#ffa657">Focus.AI </tspan><tspan fill="#3d444d"> ........... </tspan><tspan fill="#e6edf3">LLM agents, RAG,</tspan></text>
+<text xml:space="preserve" x="20" y="322"><tspan fill="#e6edf3">               </tspan><tspan fill="#e6edf3">fine-tuning, NLP</tspan></text>
+<text xml:space="preserve" x="20" y="339"><tspan fill="#ffa657">Hobbies </tspan><tspan fill="#3d444d"> ............ </tspan><tspan fill="#e6edf3">badminton, hiking,</tspan></text>
+<text xml:space="preserve" x="20" y="356"><tspan fill="#e6edf3">               </tspan><tspan fill="#e6edf3">3Blue1Brown marathons</tspan></text>
+<text xml:space="preserve" x="20" y="390"><tspan fill="#d2a8ff">GitHub Stats:</tspan></text>
+<text xml:space="preserve" x="20" y="407"><tspan fill="#ffa657">  Repos </tspan><tspan fill="#3d444d"> </tspan><tspan fill="#79c0ff">27 </tspan></text>
+<text xml:space="preserve" x="20" y="424"><tspan fill="#3d444d">  |  </tspan><tspan fill="#ffa657">Stars </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#79c0ff">5  </tspan><tspan fill="#3d444d">  |  </tspan><tspan fill="#ffa657">Followers </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#79c0ff">9  </tspan></text>
 </svg>

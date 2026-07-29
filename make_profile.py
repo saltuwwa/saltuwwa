@@ -1,4 +1,4 @@
-"""Generate profile.svg: ASCII portrait + colored neofetch-style info panel.
+"""Generate profile.svg: minimal terminal-style info panel without ASCII art.
 
 Runs daily via .github/workflows/update-readme.yml — recomputes uptime
 and pulls live repo/star/follower counts from the GitHub API.
@@ -11,36 +11,6 @@ from datetime import date
 
 USER = "saltuwwa"
 BORN = date(2007, 11, 28)
-
-ART = """\
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@%#%%@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@%=:.   .-*%@@@@@@@@@@@@@@#**
-@@@@@@@@@@@@@@@*. :::::   :*@@@@@@@@@@%#*+++
-@@@@@@@@@@@@@@%==******+=:  +@@@@@@%##***+++
-@@@@@@@@@@@@@@*+#****++++*=. %@@@@#####*+++=
-@@@@@@@@@@@@@%.++--+*+==+#%+.-@@%#####***+=-
-@@@@@@@@@@@@@# =#*+*##*#%%%*- *%%######**++=
-@@@@@@@@@@@@@# :##*******##+. -%%###***+++++
-@@@@@@@@@@@@@%. :+##*+*#%#*:   #%####*===+==
-@@@@@@@@@@@@%%:  :=*####*=.    -#%##*++**+=-
-@@@@@@@@@@%**#.     =**+=:      :#####*#*+++
-@@@%@@@%+:  .:.     :+**+:       :-+***#**++
-@@@**##-              -=:            .+###*+
-%%##*%-                                =##+=
--**+*+                                  =+==
-=*#**.                           ::     .=++
-+***=                           .*#.     -++
-:--*-                           .--.     =+=
-:--+-                                    *##
-+++::                                    #@@
-##*-.                                    #@%
-%%+:.                                    %@@
-%%#:                                    .%@%
-###:                                    :%%#
-###.                                    =%%%"""
 
 # ---------------------------------------------------------------- data
 
@@ -74,7 +44,7 @@ def gh_stats():
 
 # ---------------------------------------------------------------- svg
 
-# colors (GitHub-dark friendly, sunset theme to match the photo)
+# colors (GitHub-dark friendly, terminal aesthetic)
 C = {
     "bg":     "#0d1117",
     "border": "#30363d",
@@ -92,9 +62,7 @@ C = {
 FONT = 13            # px, monospace
 CH = FONT * 0.6      # approx char advance
 LH = 17              # line height
-PAD = 26
-ART_COLS = 44
-GAP = 30
+PAD = 20
 
 
 def line(label, dots, value, vcolor="val"):
@@ -104,70 +72,52 @@ def line(label, dots, value, vcolor="val"):
 def build_info(up, n_repos, n_stars, n_followers):
     return [
         [(USER, "user"), ("@", "at"), ("github", "host")],
-        [("-" * 34, "rule")],
-        line("OS ", "........... ", "Windows 11"),
-        line("Host ", "......... ", "SDU, Kazakhstan"),
-        line("Uptime ", "....... ", up, "num"),
-        line("Kernel ", "....... ", "CS student, 1st year"),
-        line("Shell ", "........ ", "PowerShell, Git Bash"),
-        line("IDE ", ".......... ", "VS Code, Claude Code"),
+        [("-" * 46, "rule")],
+        line("OS ", "..................... ", "Windows 11"),
+        line("Host ", "................ ", "SDU, Kazakhstan"),
+        line("Uptime ", ".............. ", up, "num"),
+        line("Kernel ", ".............. ", "CS student, 1st year"),
+        line("Shell ", "............... ", "PowerShell, Git Bash"),
+        line("IDE ", ".................. ", "VS Code, Claude Code"),
         [],
-        line("Languages.Programming ", ".. ", "Python, Java,"),
+        line("Languages.Programming ", " ", "Python, Java,"),
         [(" " * 25, "val"), ("TypeScript, JS", "val")],
-        line("Languages.Computer ", "..... ", "SQL, HTML/CSS,"),
+        line("Languages.Computer ", " ... ", "SQL, HTML/CSS,"),
         [(" " * 25, "val"), ("LaTeX, JSON", "val")],
-        line("Languages.Real ", "......... ", "Kazakh, Russian,"),
+        line("Languages.Real ", " ......... ", "Kazakh, Russian,"),
         [(" " * 25, "val"), ("English", "val")],
         [],
-        line("Focus.AI ", "..... ", "LLM agents, RAG,"),
+        line("Focus.AI ", " ........... ", "LLM agents, RAG,"),
         [(" " * 15, "val"), ("fine-tuning, NLP", "val")],
-        line("Hobbies ", "...... ", "badminton, hiking,"),
+        line("Hobbies ", " ............ ", "badminton, hiking,"),
         [(" " * 15, "val"), ("3Blue1Brown marathons", "val")],
         [],
-        [("Contact:", "sect")],
-        line("  LinkedIn ", "... ", "in/saltanat-tugayeva-057305387"),
-        line("  X ", ".......... ", "x.com/tsaltanatt"),
-        line("  GitHub ", "..... ", USER),
-        [],
         [("GitHub Stats:", "sect")],
-        [("  Repos ", "label"), (str(n_repos), "num"), ("  |  Stars ", "label"),
-         (str(n_stars), "num"), ("  |  Followers ", "label"), (str(n_followers), "num")],
+        line("  Repos ", " ", (str(n_repos)).ljust(3), "num"),
+        [("  |  ", "dots"), ("Stars ", "label"), (" ", "val"), (str(n_stars).ljust(3), "num"),
+         ("  |  ", "dots"), ("Followers ", "label"), (" ", "val"), (str(n_followers).ljust(3), "num")],
     ]
 
 
 def make_svg(info):
-    art_lines = ART.split("\n")
-    rows = max(len(art_lines), len(info))
-    width = int(PAD + ART_COLS * CH + GAP + 47 * CH + PAD)
+    rows = len(info)
+    width = int(PAD + 52 * CH + PAD)
     height = int(rows * LH + PAD * 2)
-    x_info = PAD + ART_COLS * CH + GAP
     y0 = PAD + FONT
 
-    art_top = PAD + max(0, (rows - len(art_lines)) * LH // 2)
     out = []
     out.append(
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" font-family="\'Cascadia Code\',Consolas,'
+        f'viewBox="0 0 {width} {height}" font-family="\'Cascadia Code\',\'Courier New\','
         f'\'DejaVu Sans Mono\',Menlo,monospace" font-size="{FONT}px" '
         f'style="white-space:pre">'
     )
     out.append(
-        f'<rect width="{width}" height="{height}" rx="10" '
-        f'fill="{C["bg"]}" stroke="{C["border"]}"/>'
+        f'<rect width="{width}" height="{height}" rx="8" '
+        f'fill="{C["bg"]}" stroke="{C["border"]}" stroke-width="1"/>'
     )
 
-    # ascii portrait, vertically centered, plain terminal white
-    art_y0 = art_top + FONT
-    out.append(f'<g fill="{C["val"]}">')
-    for i, l in enumerate(art_lines):
-        if l:
-            out.append(
-                f'<text xml:space="preserve" x="{PAD}" y="{art_y0 + i * LH}">'
-                f"{html.escape(l)}</text>"
-            )
-    out.append("</g>")
-
-    # info panel
+    # info panel only, no ASCII art
     for i, segs in enumerate(info):
         if not segs:
             continue
@@ -176,7 +126,7 @@ def make_svg(info):
         )
         bold = ' font-weight="bold"' if i == 0 else ""
         out.append(
-            f'<text xml:space="preserve" x="{x_info}" y="{y0 + i * LH}"{bold}>'
+            f'<text xml:space="preserve" x="{PAD}" y="{y0 + i * LH}"{bold}>'
             f"{spans}</text>"
         )
 
