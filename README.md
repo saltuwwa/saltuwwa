@@ -8,12 +8,20 @@
 <tr>
 <td width="50%">
 
-![Stats](https://github-readme-stats.vercel.app/api?username=saltuwwa&show_icons=false&hide_border=true&bg_color=0d1117&title_color=f0883e&text_color=c9d1d9&icon_color=58a6ff&hide=prs,issues,contribs&count_private=false)
+<img
+  width="100%"
+  src="https://github-readme-stats.vercel.app/api?username=saltuwwa&amp;show_icons=false&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=f0883e&amp;text_color=c9d1d9&amp;icon_color=58a6ff&amp;include_all_commits=true"
+  alt="GitHub statistics"
+/>
 
 </td>
 <td width="50%">
 
-![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=saltuwwa&hide_border=true&bg_color=0d1117&title_color=f0883e&text_color=c9d1d9&layout=compact)
+<img
+  width="100%"
+  src="https://github-readme-stats.vercel.app/api/top-langs/?username=saltuwwa&amp;layout=compact&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=f0883e&amp;text_color=c9d1d9"
+  alt="Top programming languages"
+/>
 
 </td>
 </tr>

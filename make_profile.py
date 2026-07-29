@@ -62,9 +62,9 @@ COL_WIDTH = 420
 COL_GAP = 60
 TOTAL_WIDTH = PAD + COL_WIDTH + COL_GAP + COL_WIDTH + PAD
 
-# SVG dimensions
+# SVG dimensions (COMPACT)
 SVG_WIDTH = TOTAL_WIDTH
-SVG_HEIGHT = 480
+SVG_HEIGHT = 290
 
 
 def make_svg(up, n_repos, n_stars, n_followers):
@@ -85,7 +85,7 @@ def make_svg(up, n_repos, n_stars, n_followers):
         f'fill="{C["bg"]}" stroke="{C["border"]}" stroke-width="2"/>'
     )
     
-    # Subtle top glow effect (optional)
+    # Subtle top glow effect
     out.append(
         f'<defs><linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">'
         f'<stop offset="0%" style="stop-color:{C["border"]};stop-opacity:0.3"/>'
@@ -93,13 +93,12 @@ def make_svg(up, n_repos, n_stars, n_followers):
         f'</linearGradient></defs>'
     )
     out.append(
-        f'<rect width="{SVG_WIDTH}" height="80" rx="12" fill="url(#glow)"/>'
+        f'<rect width="{SVG_WIDTH}" height="60" rx="12" fill="url(#glow)"/>'
     )
     
     y = PAD
     
     # ============ Prompt line
-    prompt_text = f"{USER}@github:~$ "
     out.append(
         f'<text x="{PAD}" y="{y}" font-size="{FONT_PROMPT}" font-weight="bold" '
         f'font-family="\'JetBrains Mono\',monospace">'
@@ -110,7 +109,7 @@ def make_svg(up, n_repos, n_stars, n_followers):
         f'</text>'
     )
     
-    y += LINE_HEIGHT + 10
+    y += LINE_HEIGHT
     
     # Separator line
     out.append(
@@ -118,7 +117,7 @@ def make_svg(up, n_repos, n_stars, n_followers):
         f'stroke="{C["border"]}" stroke-width="1" opacity="0.5"/>'
     )
     
-    y += LINE_HEIGHT - 5
+    y += 16
     
     # ============ LEFT COLUMN: System
     x_left = PAD
@@ -128,7 +127,7 @@ def make_svg(up, n_repos, n_stars, n_followers):
         f'<text x="{x_left}" y="{y}" font-size="{FONT_SECTION}" '
         f'fill="{C["sect"]}" font-weight="bold">System</text>'
     )
-    y += LINE_HEIGHT + 5
+    y += LINE_HEIGHT
     
     # System fields
     system_lines = [
@@ -167,14 +166,14 @@ def make_svg(up, n_repos, n_stars, n_followers):
     
     # ============ RIGHT COLUMN: Profile
     x_right = x_left + COL_WIDTH + COL_GAP
-    y_right = PAD + 35  # Align with System title
+    y_right = PAD + LINE_HEIGHT + 16  # Align with System title
     
     # Section title
     out.append(
         f'<text x="{x_right}" y="{y_right}" font-size="{FONT_SECTION}" '
         f'fill="{C["sect"]}" font-weight="bold">Profile</text>'
     )
-    y_right += LINE_HEIGHT + 5
+    y_right += LINE_HEIGHT
     
     # Profile fields
     profile_lines = [
@@ -225,7 +224,7 @@ def main():
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(svg)
     
-    print(f"✓ profile.svg ({SVG_WIDTH}×{SVG_HEIGHT}) | uptime: {uptime()} | stats: {n_repos} repos, {n_stars} stars")
+    print(f"profile.svg ({SVG_WIDTH}x{SVG_HEIGHT}) | uptime: {uptime()}")
 
 
 if __name__ == "__main__":
