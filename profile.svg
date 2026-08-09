@@ -11,7 +11,7 @@
 <text x="222" y="140" font-size="16" fill="#e6edf3" font-family="monospace" >SDU, Kazakhstan</text>
 <text x="32" y="165" font-size="16" fill="#ffa657" font-family="monospace" >Uptime</text>
 <text x="104" y="165" font-size="16" fill="#484f58" font-family="monospace" >...........</text>
-<text x="222" y="165" font-size="16" fill="#79c0ff" font-family="monospace" >18 years, 8 months, 11 days</text>
+<text x="222" y="165" font-size="16" fill="#79c0ff" font-family="monospace" >18 years, 8 months, 12 days</text>
 <text x="32" y="190" font-size="16" fill="#ffa657" font-family="monospace" >Kernel</text>
 <text x="104" y="190" font-size="16" fill="#484f58" font-family="monospace" >...........</text>
 <text x="222" y="190" font-size="16" fill="#e6edf3" font-family="monospace" >CS student</text>
@@ -20,7 +20,7 @@
 <text x="222" y="215" font-size="16" fill="#e6edf3" font-family="monospace" >PowerShell, Git Bash</text>
 <text x="32" y="240" font-size="16" fill="#ffa657" font-family="monospace" >IDE</text>
 <text x="74" y="240" font-size="16" fill="#484f58" font-family="monospace" >..............</text>
-<text x="222" y="240" font-size="16" fill="#e6edf3" font-family="monospace" >VS Code, Cursor</text>
+<text x="222" y="240" font-size="16" fill="#e6edf3" font-family="monospace" >VS Code, Claude Code</text>
 <text x="32" y="273" font-size="16" fill="#d2a8ff" font-family="monospace" font-weight="bold">Profile</text>
 <text x="32" y="298" font-size="16" fill="#ffa657" font-family="monospace" >Programming</text>
 <text x="154" y="298" font-size="16" fill="#484f58" font-family="monospace" >......</text>
